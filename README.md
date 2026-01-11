@@ -4,8 +4,31 @@
 
 ## Quick Start
 
-1. **Start Learning** - Browse the [Study Guide](./docs/) in the `docs/` folder
-2. **Practice Labs** - Run exercises in the `module-X/` folders
+### Option 1: View Documentation as Website (Recommended)
+
+The documentation is built with **VitePress** and can be viewed as an interactive website:
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start the documentation server
+npm run docs:dev
+
+# 3. Open in browser
+# Documentation will be available at http://localhost:5173
+```
+
+**Features**:
+- 📖 Clean, readable interface
+- 🔍 Built-in search functionality
+- 📱 Mobile-responsive design
+- 🎨 Syntax highlighting for code blocks
+- 🔄 Hot-reload during development
+
+### Option 2: Read Markdown Directly
+
+Browse the [Study Guide](./docs/) in the `docs/` folder directly:
 
 ```
 Start here:  docs/README.md  →  Complete study guide
@@ -87,6 +110,71 @@ docker compose up -d
 aws --endpoint-url=http://localhost:4566 s3 mb s3://my-bucket
 ```
 
+## Viewing Documentation with VitePress
+
+This project uses **VitePress** to provide a beautiful, searchable documentation website.
+
+### Installation
+
+```bash
+# Install Node.js dependencies
+npm install
+```
+
+**Requirements**:
+- Node.js 18.x or higher
+- npm 9.x or higher
+
+### Development Server
+
+Start the local development server with hot-reload:
+
+```bash
+npm run docs:dev
+```
+
+Open your browser to: **http://localhost:5173**
+
+The development server supports:
+- 🔄 **Hot reload**: Changes to markdown files are instantly reflected
+- 🔍 **Full search**: Search across all documentation
+- 📱 **Responsive**: Works on desktop, tablet, and mobile
+
+### Build for Production
+
+Create a static site ready for deployment:
+
+```bash
+# Build the static site
+npm run docs:build
+
+# Preview the built site
+npm run docs:preview
+```
+
+The built site will be in `docs/.vitepress/dist/` and can be deployed to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
+
+### VitePress Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install VitePress dependencies |
+| `npm run docs:dev` | Start development server at http://localhost:5173 |
+| `npm run docs:build` | Build static site for production |
+| `npm run docs:preview` | Preview the production build locally |
+
+### Customization
+
+VitePress configuration is in `docs/.vitepress/config.ts`:
+- Navigation menu
+- Sidebar structure
+- Theme settings
+- Search configuration
+
 ## Module Guides
 
 | Module | Study Guide | Lab Location |
@@ -97,6 +185,8 @@ aws --endpoint-url=http://localhost:4566 s3 mb s3://my-bucket
 
 ## Prerequisites
 
+- **Node.js** 18.x or higher (for VitePress documentation viewer)
+- **npm** 9.x or higher
 - Basic Python knowledge
 - Machine learning concepts
 - Command-line interface familiarity
@@ -115,4 +205,18 @@ This is a training repository. See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
 
-**Start Learning:** [docs/README.md](./docs/) ← Complete study guide
+## Quick Reference
+
+```bash
+# View documentation as website
+npm install
+npm run docs:dev
+# Open http://localhost:5173
+
+# Build for deployment
+npm run docs:build
+```
+
+**Start Learning:**
+- 🌐 **View as Website**: `npm run docs:dev` then open http://localhost:5173
+- 📖 **Read as Markdown**: [docs/README.md](./docs/) ← Complete study guide

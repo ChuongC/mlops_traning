@@ -23,14 +23,7 @@ By the end of this module, you will be able to:
 
 ## Study Path
 
-### Step 1: Docker Fundamentals (Conceptual)
-
-**Read:**
-- [Docker Basics Guide](docker/basics.md)
-
-**Note:** Docker labs are coming soon.
-
-### Step 2: AWS Cloud Services
+### Step 1: AWS Cloud Services
 
 **Domain-based learning (CLF-C02):**
 - [AWS Overview Guide](aws/README.md) - Complete CLF-C02 exam reference
@@ -60,7 +53,7 @@ By the end of this module, you will be able to:
 - [Storage & Database Practice](aws/localstack/storage-database.md)
 - [Networking & Analytics Practice](aws/localstack/networking-analytics-security.md)
 
-### Step 3: Terraform Infrastructure as Code
+### Step 2: Terraform Infrastructure as Code
 
 **Read:**
 - [Terraform Basics Guide](terraform/basics.md) - Complete reference
