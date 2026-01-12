@@ -10,6 +10,12 @@ This directory contains practical examples demonstrating various Terraform conce
 | [for-each](./for-each/) | Create multiple resources with `for_each` and `count` | Intermediate |
 | [locals](./locals/) | Use local values for reusable expressions | Intermediate |
 | [outputs](./outputs/) | Define and format outputs for various use cases | Beginner |
+| [modules](./modules/) | Create reusable infrastructure components | Intermediate |
+| [conditionals](./conditionals/) | Environment-specific configurations with logic | Intermediate |
+| [lifecycle](./lifecycle/) | Safe resource updates and protection | Intermediate |
+| [remote-state](./remote-state/) | S3 backend for teams | Intermediate |
+
+**Recommended order:** data-sources → outputs → locals → for-each → modules → conditionals → lifecycle → remote-state
 
 ---
 
@@ -112,6 +118,88 @@ terraform apply
 
 ---
 
+### 5. Modules (`modules/`)
+
+**Learn how to:**
+- Organize code into reusable modules
+- Define module inputs and outputs
+- Compose multiple modules
+- Use modules for ML infrastructure patterns
+
+**Key Concepts:**
+- Module structure and files
+- Module inputs (variables)
+- Module outputs
+- Module composition for ML workloads
+
+**ML Use Cases:**
+- Reusable ML model storage module
+- Training data module with intelligent tiering
+- Artifacts module for pipeline outputs
+
+---
+
+### 6. Conditionals (`conditionals/`)
+
+**Learn how to:**
+- Use ternary operators for value selection
+- Conditionally create resources with `count`
+- Filter resources with `for_each` conditionals
+- Use dynamic blocks with conditionals
+- Validate inputs with conditionals
+
+**Key Concepts:**
+- Ternary operator: `condition ? true_value : false_value`
+- Conditional count: `condition ? 1 : 0`
+- Filtered for_each: `for_each = {for k, v in map : k => v if v.condition}`
+- Dynamic blocks with conditional iteration
+
+**ML Use Cases:**
+- Environment-specific instance types
+- Production-only lifecycle rules
+- Conditional monitoring and alerts
+- Account-based compliance levels
+
+---
+
+### 7. Lifecycle (`lifecycle/`)
+
+**Learn how to:**
+- Use `create_before_destroy` for zero-downtime updates
+- Protect critical resources with `prevent_destroy`
+- Ignore dynamic changes with `ignore_changes`
+- Force replacement with `replace_triggered_by`
+
+**Key Concepts:**
+- `create_before_destroy` - Safe updates
+- `prevent_destroy` - Deletion protection
+- `ignore_changes` - Skip drift detection
+- `replace_triggered_by` - Conditional replacement
+
+**ML Use Cases:**
+- Zero-downtime model deployment
+- Production model storage protection
+- Ignoring ML pipeline tags
+- Replacing resources on model version change
+
+---
+
+### 8. Remote State (`remote-state/`)
+
+**Learn how to:**
+- Configure S3 as a remote state backend
+- Use modern S3 lock file (no DynamoDB needed)
+- Enable state encryption and versioning
+- Work with both AWS and LocalStack
+
+**Key Concepts:**
+- S3 remote state backend
+- `use_lockfile` option
+- State security and recovery
+- LocalStack for local development
+
+---
+
 ## Common Patterns
 
 ### Pattern 1: Dynamic Resource Naming
@@ -194,6 +282,35 @@ Using the `data-sources` example as reference:
 - Query the latest Amazon Linux AMI
 - Create an EC2 instance in the VPC with the AMI
 
+### Exercise 4: Build a Reusable Module
+
+Using the `modules` example as reference:
+- Create a simple module for ML model storage
+- Define input variables for customization
+- Output the bucket name and ARN
+- Use the module in your root configuration
+
+### Exercise 5: Environment-Specific Configuration
+
+Using the `conditionals` example as reference:
+- Create different instance types per environment
+- Add production-only monitoring resources
+- Implement conditional tagging
+
+### Exercise 6: Safe Resource Updates
+
+Using the `lifecycle` example as reference:
+- Create a resource with `create_before_destroy`
+- Add `prevent_destroy` to critical storage
+- Use `ignore_changes` for dynamic tags
+
+### Exercise 7: Configure Remote State
+
+Using the `remote-state` example as reference:
+- Set up an S3 bucket for state storage
+- Configure the S3 backend with encryption
+- Enable state locking
+
 ---
 
 ## Tips for Success
@@ -209,11 +326,22 @@ Using the `data-sources` example as reference:
 ## Next Steps
 
 After mastering these examples:
-1. Complete the main [basics exercises](../basics/README.md#exercises)
-2. Explore [Terraform modules](../modules/)
-3. Learn about [state management](../state/)
-4. Build your own MLOps infrastructure
+1. Complete the main [basics exercises](../../basics/README.md)
+2. Work through the comprehensive [exercises](../../exercises/exercises.md)
+3. Build your own MLOps infrastructure from scratch
+4. Explore [Terraform Cloud/Enterprise](https://developer.hashicorp.com/terraform/cloud-docs) for team collaboration
 
 ---
 
-**Need Help?** Refer to the main [Terraform Basics guide](../basics/README.md)
+## Learning Path
+
+Recommended order for learning:
+
+1. **Beginner** → `data-sources`, `outputs`
+2. **Intermediate** → `locals`, `for-each`
+3. **Advanced** → `modules`, `conditionals`, `lifecycle`
+4. **Production** → `remote-state`
+
+---
+
+**Need Help?** Refer to the main [Terraform Basics guide](../../basics/README.md) or [main README](../../README.md)
