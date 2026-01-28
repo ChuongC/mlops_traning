@@ -87,6 +87,15 @@ export default defineConfig({
               ]
             },
             {
+              text: 'Terraform',
+              collapsed: true,
+              items: [
+                { text: 'Terraform Basics', link: '/module-01/terraform/basics' },
+                { text: 'Terraform Examples', link: '/module-01/terraform/examples' },
+                { text: 'Terraform Exercises', link: '/module-01/terraform/exercises' }
+              ]
+            },
+            {
               text: 'Kubernetes',
               collapsed: true,
               items: [
