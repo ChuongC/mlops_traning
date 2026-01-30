@@ -16,6 +16,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Study Guide', link: '/README' },
       { text: 'Module 1', link: '/module-01/README' },
+      { text: 'Module 2', link: '/module-02/README' },
       { text: 'Module 3', link: '/module-03/README' },
     ],
 
@@ -161,6 +162,18 @@ export default defineConfig({
                 { text: 'Monitoring & Observability', link: '/module-01/k8s/05-monitoring/README' }
               ]
             }
+          ]
+        },
+        {
+          text: 'Module 2: Advanced Python',
+          collapsed: false,
+          items: [
+            { text: 'Module Overview', link: '/module-02/README' },
+            { text: '1. Python Typing', link: '/module-02/01-python-typing' },
+            { text: '2. Project Management with uv', link: '/module-02/02-project-management-uv' },
+            { text: '3. Data Validation with Pydantic', link: '/module-02/03-data-validation-pydantic' },
+            { text: '4. Decorators', link: '/module-02/04-decorators' },
+            { text: '5. Async/Await', link: '/module-02/05-async-await' }
           ]
         },
         {
